@@ -40,7 +40,7 @@ jobs:
         git add . || true
         git commit -m 'Updated portfolio assets' || true
         git push origin main
-  
+
     - name: Upload Pages artifact
       uses: actions/upload-pages-artifact@v2
       
