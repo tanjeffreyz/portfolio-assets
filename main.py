@@ -5,7 +5,7 @@ from glob import glob
 from PIL import Image
 
 
-OUTPUT_PATH = 'blur_data_urls.json'
+OUTPUT_PATH = 'data/blur_data_urls.json'
 BLUR_SIZE = 8
 
 
