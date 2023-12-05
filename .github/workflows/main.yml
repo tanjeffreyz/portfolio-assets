@@ -13,9 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Checkout
+      uses: actions/checkout@v4
     
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
@@ -40,6 +39,12 @@ jobs:
         git add . || true
         git commit -m 'Updated portfolio assets' || true
         git push origin main
+
+    - name: Build with Jekyll
+      uses: actions/jekyll-build-pages@v1
+      with:
+        source: ./
+        destination: ./_site
 
     - name: Upload Pages artifact
       uses: actions/upload-pages-artifact@v2
