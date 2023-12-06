@@ -26,4 +26,4 @@ for ext in ('png', 'jpg'):
         urls[path] = data_url
 
 with open(OUTPUT_PATH, 'w') as file:
-    json.dump(urls, file, indent=2)
+    json.dump(urls, file)
