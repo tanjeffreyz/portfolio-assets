@@ -6,6 +6,7 @@ from PIL import Image
 
 
 OUTPUT_PATH = 'data/blur_data_urls.json'
+IGNORED = ['images/blog']
 BLUR_SIZE = 8
 
 
@@ -13,6 +14,8 @@ urls = {}
 for ext in ('png', 'jpg'):
     for path in glob(f'images/**/*.{ext}', recursive=True):
         path = path.replace('\\', '/')
+        if any(map(lambda x: path.startswith(x), IGNORED)):
+            continue
 
         # Resize image to decrease response size
         img = Image.open(path).resize((BLUR_SIZE, BLUR_SIZE))
