@@ -27,3 +27,5 @@ for ext in ('png', 'jpg'):
 
 with open(OUTPUT_PATH, 'w') as file:
     json.dump(urls, file)
+
+print(f'[~] Finished processing {len(urls)} images')
